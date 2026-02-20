@@ -62,7 +62,7 @@ export const codeAgentFunction = inngest.createFunction(
       description: "An expert coding agent",
       system: PROMPT,
       model: anthropic({
-        model: "claude-3-5-sonnet-20241022",
+        model: "claude-3-5-sonnet",
         defaultParameters: {
           temperature: 0.1,
           max_tokens: 4096,
@@ -196,7 +196,7 @@ export const codeAgentFunction = inngest.createFunction(
       description: "A fragment title generator",
       system: FRAGMENT_TITLE_PROMPT,
       model: anthropic({
-        model: "claude-3-5-sonnet-20241022",
+        model: "claude-3-5-sonnet",
         defaultParameters: {
           temperature: 0.3,
           max_tokens: 512,
@@ -209,7 +209,7 @@ export const codeAgentFunction = inngest.createFunction(
       description: "A response generator",
       system: RESPONSE_PROMPT,
       model: anthropic({
-        model: "claude-3-5-sonnet-20241022",
+        model: "claude-3-5-sonnet",
         defaultParameters: {
           temperature: 0.3,
           max_tokens: 1024,
