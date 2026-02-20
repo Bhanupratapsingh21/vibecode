@@ -9,11 +9,11 @@ import { useCurrentTheme } from "@/hooks/use-current-theme";
 const Page = () => {
   const currentTheme = useCurrentTheme();
 
-  return ( 
+  return (
     <div className="flex flex-col max-w-3xl mx-auto w-full">
       <section className="space-y-6 pt-[16vh] 2xl:pt-48">
         <div className="flex flex-col items-center">
-          <Image 
+          <Image
             src="/logo.svg"
             alt="Vibe"
             width={50}
@@ -35,7 +35,7 @@ const Page = () => {
         />
       </section>
     </div>
-   );
+  );
 }
- 
+
 export default Page;

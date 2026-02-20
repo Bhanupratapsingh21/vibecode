@@ -10,9 +10,11 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
     "@clerk/nextjs": "^6.23.0",
     "@clerk/themes": "^2.2.51",
     "@e2b/code-interpreter": "^1.5.1",
+    "@google/generative-ai": "^0.24.1",
     "@hookform/resolvers": "^5.1.1",
     "@inngest/agent-kit": "^0.8.3",
     "@prisma/client": "^6.10.1",

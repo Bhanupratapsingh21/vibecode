@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { Sandbox } from "@e2b/code-interpreter";
-import { openai, createAgent, createTool, createNetwork, type Tool, type Message, createState } from "@inngest/agent-kit";
-
+import { anthropic, createAgent, createTool, createNetwork, type Tool, type Message, createState } from "@inngest/agent-kit";
 import { prisma } from "@/lib/db";
 import { FRAGMENT_TITLE_PROMPT, PROMPT, RESPONSE_PROMPT } from "@/prompt";
 
@@ -62,10 +61,11 @@ export const codeAgentFunction = inngest.createFunction(
       name: "code-agent",
       description: "An expert coding agent",
       system: PROMPT,
-      model: openai({
-        model: "gpt-4.1",
+      model: anthropic({
+        model: "claude-3-5-sonnet-20241022",
         defaultParameters: {
           temperature: 0.1,
+          max_tokens: 4096,
         },
       }),
       tools: [
@@ -195,8 +195,12 @@ export const codeAgentFunction = inngest.createFunction(
       name: "fragment-title-generator",
       description: "A fragment title generator",
       system: FRAGMENT_TITLE_PROMPT,
-      model: openai({
-        model: "gpt-4o",
+      model: anthropic({
+        model: "claude-3-5-sonnet-20241022",
+        defaultParameters: {
+          temperature: 0.3,
+          max_tokens: 512,
+        },
       }),
     })
 
@@ -204,8 +208,12 @@ export const codeAgentFunction = inngest.createFunction(
       name: "response-generator",
       description: "A response generator",
       system: RESPONSE_PROMPT,
-      model: openai({
-        model: "gpt-4o",
+      model: anthropic({
+        model: "claude-3-5-sonnet-20241022",
+        defaultParameters: {
+          temperature: 0.3,
+          max_tokens: 1024,
+        },
       }),
     });
 
